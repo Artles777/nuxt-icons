@@ -26,6 +26,7 @@ async function getIcon () {
       import: 'default'
     })
     const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]?.()
+    // @ts-ignore
     if (rawIcon!.includes('stroke')) { hasStroke = true }
     icon.value = rawIcon!
   } catch {
